@@ -120,9 +120,9 @@ function Home() {
             <Button
               variant="contained"
               color="secondary"
-              onClick={handleFileUploadToS3}
+              onClick={handleFileUpload}
             >
-              Upload Compressed File to S3
+              Upload Compressed File to Cloud
             </Button>
           </Box>
         )}
