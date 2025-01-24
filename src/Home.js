@@ -15,6 +15,7 @@ import './Home.css';
 
 function Home() {
   const [compressedFilePath, setCompressedFilePath] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -75,28 +76,6 @@ function Home() {
       .catch((error) => {
         console.error('Error downloading file:', error);
         setSnackbarMessage('Error downloading file.');
-        setSnackbarSeverity('error');
-        setSnackbarOpen(true);
-      });
-  };
-
-  const handleFileUploadToS3 = () => {
-    if (!compressedFilePath) {
-      return;
-    }
-
-    axios.get('http://localhost:5000/api/upload/s3', {
-      params: { filePath: compressedFilePath, token: localStorage.getItem('token') },
-    })
-      .then((response) => {
-        console.log('File uploaded to S3 successfully:', response.data);
-        setSnackbarMessage('File uploaded to S3 successfully!');
-        setSnackbarSeverity('success');
-        setSnackbarOpen(true);
-      })
-      .catch((error) => {
-        console.error('Error uploading to S3:', error);
-        setSnackbarMessage('Error uploading to S3.');
         setSnackbarSeverity('error');
         setSnackbarOpen(true);
       });

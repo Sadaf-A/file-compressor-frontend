@@ -54,6 +54,7 @@ const theme = createTheme({
 function Login({ setToken }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [token, setJWTToken] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
