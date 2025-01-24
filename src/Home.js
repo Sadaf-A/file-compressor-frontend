@@ -33,7 +33,7 @@ function Home() {
     formData.append('file', file);
     formData.append('token', localStorage.getItem('token'));
 
-    axios.post('http://localhost:5000/api/upload', formData, {
+    axios.post('https://file-compressor-backend.el.r.appspot.com/api/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -60,7 +60,7 @@ function Home() {
       return;
     }
 
-    axios.get('http://localhost:5000/api/download', {
+    axios.get('https://file-compressor-backend.el.r.appspot.com/api/download', {
       params: { filePath: compressedFilePath },
       responseType: 'blob', // important to handle binary data
     })

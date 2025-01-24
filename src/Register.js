@@ -61,7 +61,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/register', { username, password });
+      const response = await axios.post('https://file-compressor-backend.el.r.appspot.com/api/register', { username, password });
       const { token } = response.data;
       localStorage.setItem('token', token);
       setSnackbarMessage('Registration successful!');

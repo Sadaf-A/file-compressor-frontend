@@ -20,7 +20,7 @@ function Uploads() {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/uploads', {
+        const response = await axios.get('https://file-compressor-backend.el.r.appspot.com/api/uploads', {
           params: { username: localStorage.getItem('username') }
         });
         setFiles(response.data);
@@ -35,7 +35,7 @@ function Uploads() {
   const handleDecompress = async (fileKey) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/decompress', {
+      const response = await axios.post('https://file-compressor-backend.el.r.appspot.com/api/decompress', {
         fileKey,
         username: localStorage.getItem('username'),
       });
